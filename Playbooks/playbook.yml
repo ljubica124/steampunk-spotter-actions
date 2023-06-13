@@ -8,13 +8,13 @@
       amazon.aws.ec2_security_group:
         name: "web-app-sec"
         description: "Sec group for app web-app"
-        region: "us-west-1"
+        region: "eu-west-1"
         access_key: "{{ ec2_access_key }}"
         rules:
           - proto: tcp
             from_port: 22
             to_port: 22
-            cidr_ip: 0.0.0.0/0
+            cidr_ip: 192.120.0.0/16
           - proto: tcp
             to_port: 80
             cidr_ip: 0.0.0.0/0
@@ -30,7 +30,7 @@
         volumes:
           - device_name: /dev/sda1
             ebs:
-              volume_size: 254
+              volume_size: 64
               delete_on_termination: true
         image_id: ami-08c947c038321a605
         network:
@@ -41,7 +41,7 @@
     - name: VPC info.
       steampunk.aws.ec2_vpc_info:
         auth:
-          access_key: asdghfdgfhgtwfesdfghtgsfd
+          access_key: "{{ my_access_key }}"
           secret_key: "{{ my_secret_key }}"
           region: "{{ my_region }}"
       register: vpcs
@@ -60,7 +60,6 @@
       cisco.ios.ios_config:
         lines:
           - snmp-server community ansible-public RO
-          - reboot
 
     - name: Ensure user bob is present.
       ansible.windows.win_user:
