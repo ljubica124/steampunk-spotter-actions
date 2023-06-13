@@ -1,0 +1,13 @@
+collections:
+- name: amazon.aws
+  version: 6.0.0
+- name: steampunk.aws
+  version: 0.9.0
+- name: community.postgresql
+  version: 2.4.1
+- name: cisco.ios
+  version: 4.5.0
+- name: ansible.windows
+  version: 1.14.0
+- name: community.general
+  version: 7.0.0
