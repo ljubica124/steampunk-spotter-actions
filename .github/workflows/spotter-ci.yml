@@ -13,6 +13,6 @@ jobs:
           paths: .
           include_values: true
           ansible_version: 2.14
-          profile: full
+          profile: default
         env:
           SPOTTER_API_TOKEN: ${{ secrets.SPOTTER_API_TOKEN }}
