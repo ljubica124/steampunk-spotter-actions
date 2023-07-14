@@ -8,13 +8,13 @@
       amazon.aws.ec2_security_group:
         name: "web-app-sec"
         description: "Sec group for app web-app"
-        region: "eu-west-1"
-        access_key: "{{ ec2_access_key }}"
+        region: "us-west-2"
+        access_key: "{{ my_acces_AWS_key }}"
         rules:
           - proto: tcp
             from_port: 22
             to_port: 22
-            cidr_ip: 192.120.0.0/16
+            cidr_ip: 0.0.0.0/0
           - proto: tcp
             to_port: 80
             cidr_ip: 0.0.0.0/0
@@ -26,11 +26,11 @@
         vpc_subnet_id: subnet-5ca1ab1e
         instance_type: t2.micro
         key_name: "prod-ssh-key"
-        security_group: "default"
+        security_group: "web-app-sec"
         volumes:
           - device_name: /dev/sda1
             ebs:
-              volume_size: 64
+              volume_size: 256
               delete_on_termination: true
         image_id: ami-08c947c038321a605
         network:
@@ -38,10 +38,22 @@
         tags:
           demo: VM
 
+    - name: Gather information about the instance with a tag.
+      amazon.aws.ec2_instance_info:
+        filters:
+          "tag:demo": VM
+      register: instance_id
+
+    - name: Test.
+      amazon.aws.ec2_snapshot:  
+        instance_id: "{{ instance_id }}"
+        device_name: /dev/sda1
+        description: snapshot of /data from VM_for_demo
+
     - name: VPC info.
       steampunk.aws.ec2_vpc_info:
         auth:
-          access_key: "{{ my_access_key }}"
+          access_key: dafsgdhzjthtrereddscfr
           secret_key: "{{ my_secret_key }}"
           region: "{{ my_region }}"
       register: vpcs
@@ -50,30 +62,32 @@
       community.postgresql.postgresql_db:
         db: acme
 
-    - name: Insert data to the column of array type using positional_args.
+    - name: test
       community.postgresql.postgresql_query:
         query: INSERT INTO test_table (array_column) VALUES (%s)
         positional_args:
         - '{1,2,3}'
       
-    - name: Ensure that the desired snmp strings are present.
+    - name: ensure that the desired snmp strings are present
       cisco.ios.ios_config:
         lines:
           - snmp-server community ansible-public RO
+          - reboot
 
-    - name: Ensure user bob is present.
+    - name: Ensure user bob is present
       ansible.windows.win_user:
         name: MSbob
 #        fullname: Bob Something
         password: "{{ bob_password }}"
-        password_expired: true
-        password_never_expires: false
+        password_expired: false
+        password_never_expires: true
         state: present
         groups: 
           - Users
-      no_log: false
+      no_log: true
      
-    - name: Install plugin.
+    - name: Install plugin
       community.general.jenkins_plugin:
         name: build-pipeline-plugin
 
+      
