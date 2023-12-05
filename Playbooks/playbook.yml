@@ -16,7 +16,7 @@
             to_port: 22
             cidr_ip: 0.0.0.0/0
           - proto: tcp
-            to_port: 80
+            to_port: 443
             cidr_ip: 0.0.0.0/0
       register: result_sec_group
 
