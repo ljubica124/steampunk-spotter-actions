@@ -1,11 +1,10 @@
 {
   "skip_checks": [
     {
-      "event": "H2200"
+      "event": "H2100"
     },
     {
-      "event": "E005",
-      "fqcn": "sensu.sensu_go.user"
+      "event": "E005"
     },
     {
       "event": "E2300",
