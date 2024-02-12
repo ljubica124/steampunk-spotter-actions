@@ -1,4 +1,4 @@
-package Play
+package Spotter
 
 SpotterPolicy[result] {
 	task := input.tasks[i]
@@ -9,6 +9,7 @@ SpotterPolicy[result] {
 	result := {
 		"correlation_id": task.task_id,
 		"check_type": "TASK",
+		"subcode": "WinPasswordExpired",
 		"message": "When creating a new user make sure that password is expired.",
         "abc": password_expired
 	}
@@ -23,6 +24,7 @@ SpotterPolicy[result] {
 	result := {
 		"correlation_id": task.task_id,
 		"check_type": "TASK",
+		"subcode": "WinPasswordExpDate",
 		"message": "When creating a new user make sure that has an expiration date.",
         "abc": password_never_expires
 	}

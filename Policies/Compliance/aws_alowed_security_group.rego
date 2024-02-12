@@ -1,4 +1,4 @@
-package play
+package Spotter
 
 # Check if value of Name attribute starts with uppercase.
 SpotterPolicy[result] {
@@ -9,6 +9,7 @@ SpotterPolicy[result] {
     result := {
 		"correlation_id": task.task_id,
 		"check_type": "TASK",
+		"subcode": "DefaultSecurityGroup",
 		"message": "Instances shouldn't be in default security groups."
 	}
 }

@@ -8,6 +8,7 @@ SpotterPolicy[result] {
     result := {
 		"correlation_id": task.task_id,
 		"check_type": "TASK",
+    "subcode": "PlainText_Variable",
 		"message": "Access key should be written as a variable."
 	}
 }

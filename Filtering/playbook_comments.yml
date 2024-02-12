@@ -1,0 +1,40 @@
+---
+- name: Sample playbook
+  hosts: localhost
+  tasks:
+    - name: Create a new Sensu Go user
+      sensu.sensu_go.user:
+        password: "{{ lookup('env', 'SENSU_USER_PASSWORD') }}"
+      when: true
+
+    - name: Get the payload from the API # noqa: W003, E903, W1800
+      uri:
+        url: "/some-url"
+        method: GET
+        user: "username1"
+
+    - name: Ensure that the server certificate belongs to the specified private key # noqa: H1900[fqcn=community.crypto.x509_certificate]
+      community.crypto.x509_certificate:
+        path: "{{ config_path }}/certificates/server.crt"
+        privatekey_path: "{{ config_path }}/certificates/server.key"
+        provider: assertonly
+
+    - name: Create an example.com A record with value 127.0.0.1
+      inwx.collection.dns:
+        domain: example.com
+        type: A
+        value: 127.0.0.1
+        username: test_user
+        password: test_password
+
+    - name: Create AWS data pipeline # noqa: H2606,W2600[subevent_code=B324,fqcn=community.aws.data_pipeline]
+      community.aws.data_pipeline:
+        name: test-dp
+        region: us-west-2
+        objects: "{{pipelineObjects}}"
+        parameters: "{{pipelineParameters}}"
+        values: "{{pipelineValues}}"
+        tags:
+          key1: val1
+          key2: val2
+        state: present

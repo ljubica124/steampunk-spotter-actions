@@ -1,0 +1,71 @@
+---
+
+- name: Bad playbook
+  hosts: localhost
+  tasks:
+    - name: Create an example.com A record with value 127.0.0.1
+      inwx.collection.dns:
+        domain: example.com
+        type: A
+        value: 127.0.0.1
+        username: test_user
+        password: test_password
+
+    - name: Get current configuration for interface Ethernet2
+      community.network.cv_server_provision:
+        host: cvp_node
+        username: cvp_user
+        password: cvp_pass
+        protocol: https
+        server_name: new_server
+        switch_name: eos_switch_1
+        switch_port: 2
+        template: template_file.j2
+        action: show
+
+    - name: Create a new database with name "test_db"
+      community.postgresql.postgresql_db:
+        db: test_db
+
+    - name: Wait a maximum of 300 seconds specified tenant to be in the provisioned state.
+      f5networks.f5_bigip.velos_tenant_wait:
+        name: bigip_tenant1
+        state: provisioned
+        timeout: 300
+
+    - name: Ensure machines of which remote target address is 48 and 50 are powered off
+      community.general.ipmi_power:
+        name: test.testdomain.com
+        user: admin
+        password: password
+        state: 'off'
+        machine:
+          - targetAddress: 48
+          - targetAddress: 50
+
+    - name: Create a cloudformation stack
+      amazon.aws.cloudformation:
+        stack_name: "ansible-cloudformation"
+        state: "present"
+        region: "us-east-1"
+        disable_rollback: true
+        template: "files/cloudformation-example.json"
+        template_parameters:
+          KeyName: "jmartin"
+          DiskType: "ephemeral"
+          InstanceType: "m1.small"
+          ClusterSize: 3
+        tags:
+          Stack: "ansible-cloudformation"
+
+    - name: Create AWS data pipeline
+      community.aws.data_pipeline:
+        name: test-dp
+        region: us-west-2
+        objects: "{{pipelineObjects}}"
+        parameters: "{{pipelineParameters}}"
+        values: "{{pipelineValues}}"
+        tags:
+          key1: val1
+          key2: val2
+        state: present

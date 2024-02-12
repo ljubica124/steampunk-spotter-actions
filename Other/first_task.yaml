@@ -1,0 +1,14 @@
+---
+- name: TEST
+  hosts: localhost
+  become: false
+  gather_facts: false
+  tasks:
+  - name: Print change request
+    ansible.builtin.debug:
+      msg: "Change-request: 12edasd21r2q312"
+
+  - name: Install Samba
+    ansible.builtin.apt:
+      package: samba
+      state: present

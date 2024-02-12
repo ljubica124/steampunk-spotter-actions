@@ -1,6 +1,6 @@
 ---
 - hosts: all
-  connection: local
+  connection: network_cli
   gather_facts: false
 
   tasks:
@@ -9,14 +9,14 @@
         name: "web-app-sec"
         description: "Sec group for app web-app"
         region: "us-west-2"
-        access_key: "{{ my_acces_AWS_key }}"
+        access_key: "sdafrgeg3wfw"
         rules:
           - proto: tcp
             from_port: 22
             to_port: 22
             cidr_ip: 0.0.0.0/0
           - proto: tcp
-            to_port: 443
+            to_port: 80
             cidr_ip: 0.0.0.0/0
       register: result_sec_group
 
@@ -26,11 +26,11 @@
         vpc_subnet_id: subnet-5ca1ab1e
         instance_type: t2.micro
         key_name: "prod-ssh-key"
-        security_group: "web-app-sec"
+        security_group: "default"
         volumes:
           - device_name: /dev/sda1
             ebs:
-              volume_size: 256
+              volume_size: 64
               delete_on_termination: true
         image_id: ami-08c947c038321a605
         network:
@@ -44,7 +44,7 @@
           "tag:demo": VM
       register: instance_id
 
-    - name: Test.
+    - name: Test
       amazon.aws.ec2_snapshot:  
         instance_id: "{{ instance_id }}"
         device_name: /dev/sda1
@@ -62,32 +62,14 @@
       community.postgresql.postgresql_db:
         db: acme
 
-    - name: test
+    - name: For passing JSON, etc.
       community.postgresql.postgresql_query:
         query: INSERT INTO test_table (array_column) VALUES (%s)
         positional_args:
         - '{1,2,3}'
       
-    - name: ensure that the desired snmp strings are present
+    - name: Ensure that the desired snmp strings are present.
       cisco.ios.ios_config:
         lines:
           - snmp-server community ansible-public RO
           - reboot
-
-    - name: Ensure user bob is present
-      ansible.windows.win_user:
-        name: MSbob
-#        fullname: Bob Something
-        password: "{{ bob_password }}"
-        password_expired: false
-        password_never_expires: true
-        state: present
-        groups: 
-          - Users
-      no_log: true
-     
-    - name: Install plugin
-      community.general.jenkins_plugin:
-        name: build-pipeline-plugin
-
-      

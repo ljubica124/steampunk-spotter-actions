@@ -1,0 +1,6 @@
+- name: Show pending updates (APT)
+  ansible.builtin.debug:
+    msg: "{{ updates.stdout.split('
+') }}"
+  when:
+    - ansible_os_family == "Debian"

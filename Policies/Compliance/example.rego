@@ -9,6 +9,7 @@ SpotterPolicy[result] {
     result := {
 		"correlation_id": task.task_id,
 		"check_type": "TASK",
+		"subcode": "CapitalLetter",
 		"message": "Task names must start with a capital letter."
 	}
 }
@@ -22,6 +23,7 @@ SpotterPolicy[result] {
     result := {
 		"correlation_id": task.task_id,
 		"check_type": "TASK",
+		"subcode": "EndWithDot",
 		"message": "Task names must end with a dot."
 	}
 
@@ -36,6 +38,7 @@ SpotterPolicy[result] {
     result := {
 		"correlation_id": task.task_id,
 		"check_type": "TASK",
+		"subcode": "TaskName",
 		"message": "Each task must have a corresponding name attribute."
 	}
 }
@@ -49,6 +52,7 @@ SpotterPolicy[result] {
     result := {
 		"correlation_id": task.task_id,
 		"check_type": "TASK",
+		"subcode": "TaskNameEmpty",
 		"message": "Name should not be empty."
 	}
 }

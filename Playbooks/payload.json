@@ -2,50 +2,22 @@
   "environment": {
     "python_version": "3.10.6",
     "ansible_version": {
-      "ansible_core": "2.15.0",
+      "ansible_core": "2.14.4",
       "ansible_base": null,
-      "ansible": "[core 2.15.0]"
+      "ansible": "[core 2.14.4]"
     },
     "installed_collections": [
       {
-        "fqcn": "ansible.netcommon",
-        "version": "4.1.0"
+        "fqcn": "awx.awx",
+        "version": "21.14.0"
       },
       {
-        "fqcn": "ansible.posix",
+        "fqcn": "chocolatey.chocolatey",
         "version": "1.4.0"
       },
       {
-        "fqcn": "ansible.utils",
-        "version": "2.8.0"
-      },
-      {
-        "fqcn": "amazon.aws",
-        "version": "6.0.0"
-      },
-      {
-        "fqcn": "ansible.netcommon",
-        "version": "5.1.1"
-      },
-      {
-        "fqcn": "ansible.posix",
-        "version": "1.5.4"
-      },
-      {
-        "fqcn": "ansible.utils",
-        "version": "2.10.2"
-      },
-      {
-        "fqcn": "ansible.windows",
-        "version": "1.14.0"
-      },
-      {
-        "fqcn": "arista.eos",
-        "version": "6.0.1"
-      },
-      {
-        "fqcn": "awx.awx",
-        "version": "22.2.0"
+        "fqcn": "hetzner.hcloud",
+        "version": "1.10.0"
       },
       {
         "fqcn": "azure.azcollection",
@@ -53,215 +25,55 @@
       },
       {
         "fqcn": "check_point.mgmt",
-        "version": "5.0.0"
-      },
-      {
-        "fqcn": "chocolatey.chocolatey",
-        "version": "1.4.0"
-      },
-      {
-        "fqcn": "cisco.aci",
-        "version": "2.6.0"
-      },
-      {
-        "fqcn": "cisco.asa",
         "version": "4.0.0"
       },
       {
-        "fqcn": "cisco.dnac",
-        "version": "6.7.2"
+        "fqcn": "t_systems_mms.icinga_director",
+        "version": "1.32.2"
       },
       {
-        "fqcn": "cisco.intersight",
-        "version": "1.0.27"
-      },
-      {
-        "fqcn": "cisco.ios",
-        "version": "4.5.0"
-      },
-      {
-        "fqcn": "cisco.iosxr",
-        "version": "5.0.2"
-      },
-      {
-        "fqcn": "cisco.ise",
-        "version": "2.5.12"
-      },
-      {
-        "fqcn": "cisco.meraki",
-        "version": "2.15.1"
-      },
-      {
-        "fqcn": "cisco.mso",
-        "version": "2.4.0"
-      },
-      {
-        "fqcn": "cisco.nso",
-        "version": "1.0.3"
-      },
-      {
-        "fqcn": "cisco.nxos",
-        "version": "4.3.0"
-      },
-      {
-        "fqcn": "cisco.ucs",
-        "version": "1.8.0"
-      },
-      {
-        "fqcn": "cloud.common",
-        "version": "2.1.3"
-      },
-      {
-        "fqcn": "cloudscale_ch.cloud",
-        "version": "2.2.4"
-      },
-      {
-        "fqcn": "community.aws",
-        "version": "6.0.0"
-      },
-      {
-        "fqcn": "community.azure",
-        "version": "2.0.0"
-      },
-      {
-        "fqcn": "community.ciscosmb",
-        "version": "1.0.5"
-      },
-      {
-        "fqcn": "community.crypto",
-        "version": "2.13.0"
-      },
-      {
-        "fqcn": "community.digitalocean",
-        "version": "1.23.0"
-      },
-      {
-        "fqcn": "community.dns",
-        "version": "2.5.3"
-      },
-      {
-        "fqcn": "community.docker",
-        "version": "3.4.5"
-      },
-      {
-        "fqcn": "community.fortios",
-        "version": "1.0.0"
-      },
-      {
-        "fqcn": "community.general",
-        "version": "7.0.0"
-      },
-      {
-        "fqcn": "community.google",
-        "version": "1.0.0"
-      },
-      {
-        "fqcn": "community.grafana",
-        "version": "1.5.4"
-      },
-      {
-        "fqcn": "community.hashi_vault",
-        "version": "5.0.0"
-      },
-      {
-        "fqcn": "community.hrobot",
-        "version": "1.8.0"
-      },
-      {
-        "fqcn": "community.libvirt",
-        "version": "1.2.0"
-      },
-      {
-        "fqcn": "community.mongodb",
-        "version": "1.5.2"
-      },
-      {
-        "fqcn": "community.mysql",
-        "version": "3.7.0"
-      },
-      {
-        "fqcn": "community.network",
-        "version": "5.0.0"
-      },
-      {
-        "fqcn": "community.okd",
-        "version": "2.3.0"
-      },
-      {
-        "fqcn": "community.postgresql",
-        "version": "2.4.1"
-      },
-      {
-        "fqcn": "community.proxysql",
-        "version": "1.5.1"
-      },
-      {
-        "fqcn": "community.rabbitmq",
-        "version": "1.2.3"
-      },
-      {
-        "fqcn": "community.routeros",
-        "version": "2.8.0"
-      },
-      {
-        "fqcn": "community.sap",
-        "version": "1.0.0"
-      },
-      {
-        "fqcn": "community.sap_libs",
-        "version": "1.4.1"
-      },
-      {
-        "fqcn": "community.skydive",
-        "version": "1.0.0"
-      },
-      {
-        "fqcn": "community.sops",
-        "version": "1.6.1"
-      },
-      {
-        "fqcn": "community.vmware",
-        "version": "3.6.0"
-      },
-      {
-        "fqcn": "community.windows",
-        "version": "1.13.0"
-      },
-      {
-        "fqcn": "community.zabbix",
-        "version": "2.0.0"
+        "fqcn": "hpe.nimble",
+        "version": "1.1.4"
       },
       {
         "fqcn": "containers.podman",
         "version": "1.10.1"
       },
       {
-        "fqcn": "cyberark.conjur",
-        "version": "1.2.0"
+        "fqcn": "infoblox.nios_modules",
+        "version": "1.4.1"
       },
       {
-        "fqcn": "cyberark.pas",
-        "version": "1.0.17"
+        "fqcn": "netbox.netbox",
+        "version": "3.11.0"
       },
       {
-        "fqcn": "dellemc.enterprise_sonic",
-        "version": "2.0.0"
+        "fqcn": "junipernetworks.junos",
+        "version": "4.1.0"
       },
       {
-        "fqcn": "dellemc.openmanage",
-        "version": "7.5.0"
+        "fqcn": "mellanox.onyx",
+        "version": "1.0.0"
       },
       {
-        "fqcn": "dellemc.powerflex",
-        "version": "1.6.0"
+        "fqcn": "cloud.common",
+        "version": "2.1.3"
       },
       {
-        "fqcn": "dellemc.unity",
-        "version": "1.6.0"
+        "fqcn": "vyos.vyos",
+        "version": "4.0.1"
       },
       {
-        "fqcn": "f5networks.f5_modules",
-        "version": "1.24.0"
+        "fqcn": "ngine_io.exoscale",
+        "version": "1.0.0"
+      },
+      {
+        "fqcn": "ngine_io.cloudstack",
+        "version": "2.3.0"
+      },
+      {
+        "fqcn": "ngine_io.vultr",
+        "version": "1.1.3"
       },
       {
         "fqcn": "fortinet.fortimanager",
@@ -272,28 +84,8 @@
         "version": "2.2.3"
       },
       {
-        "fqcn": "frr.frr",
-        "version": "2.0.2"
-      },
-      {
-        "fqcn": "gluster.gluster",
-        "version": "1.0.2"
-      },
-      {
-        "fqcn": "google.cloud",
-        "version": "1.1.3"
-      },
-      {
-        "fqcn": "grafana.grafana",
-        "version": "2.0.0"
-      },
-      {
-        "fqcn": "hetzner.hcloud",
-        "version": "1.11.0"
-      },
-      {
-        "fqcn": "hpe.nimble",
-        "version": "1.1.4"
+        "fqcn": "openvswitch.openvswitch",
+        "version": "2.1.0"
       },
       {
         "fqcn": "ibm.qradar",
@@ -301,15 +93,311 @@
       },
       {
         "fqcn": "ibm.spectrum_virtualize",
-        "version": "1.12.0"
+        "version": "1.11.0"
+      },
+      {
+        "fqcn": "openstack.cloud",
+        "version": "1.10.0"
+      },
+      {
+        "fqcn": "grafana.grafana",
+        "version": "1.1.1"
+      },
+      {
+        "fqcn": "cisco.iosxr",
+        "version": "4.1.0"
+      },
+      {
+        "fqcn": "cisco.ise",
+        "version": "2.5.12"
+      },
+      {
+        "fqcn": "cisco.dnac",
+        "version": "6.6.4"
+      },
+      {
+        "fqcn": "cisco.nso",
+        "version": "1.0.3"
+      },
+      {
+        "fqcn": "cisco.asa",
+        "version": "4.0.0"
+      },
+      {
+        "fqcn": "cisco.mso",
+        "version": "2.2.1"
+      },
+      {
+        "fqcn": "cisco.nxos",
+        "version": "4.1.0"
+      },
+      {
+        "fqcn": "cisco.aci",
+        "version": "2.4.0"
+      },
+      {
+        "fqcn": "cisco.intersight",
+        "version": "1.0.24"
+      },
+      {
+        "fqcn": "cisco.ucs",
+        "version": "1.8.0"
+      },
+      {
+        "fqcn": "cisco.ios",
+        "version": "4.4.0"
+      },
+      {
+        "fqcn": "cisco.meraki",
+        "version": "2.15.1"
+      },
+      {
+        "fqcn": "wti.remote",
+        "version": "1.0.4"
       },
       {
         "fqcn": "infinidat.infinibox",
         "version": "1.3.12"
       },
       {
-        "fqcn": "infoblox.nios_modules",
+        "fqcn": "theforeman.foreman",
+        "version": "3.9.0"
+      },
+      {
+        "fqcn": "f5networks.f5_modules",
+        "version": "1.23.0"
+      },
+      {
+        "fqcn": "kubernetes.core",
+        "version": "2.4.0"
+      },
+      {
+        "fqcn": "arista.eos",
+        "version": "6.0.0"
+      },
+      {
+        "fqcn": "google.cloud",
+        "version": "1.1.3"
+      },
+      {
+        "fqcn": "frr.frr",
+        "version": "2.0.0"
+      },
+      {
+        "fqcn": "vultr.cloud",
+        "version": "1.7.0"
+      },
+      {
+        "fqcn": "purestorage.flashblade",
+        "version": "1.10.0"
+      },
+      {
+        "fqcn": "purestorage.fusion",
+        "version": "1.4.1"
+      },
+      {
+        "fqcn": "purestorage.flasharray",
+        "version": "1.17.2"
+      },
+      {
+        "fqcn": "vmware.vmware_rest",
+        "version": "2.3.1"
+      },
+      {
+        "fqcn": "dellemc.os6",
+        "version": "1.0.7"
+      },
+      {
+        "fqcn": "dellemc.os10",
+        "version": "1.1.1"
+      },
+      {
+        "fqcn": "dellemc.unity",
         "version": "1.5.0"
+      },
+      {
+        "fqcn": "dellemc.enterprise_sonic",
+        "version": "2.0.0"
+      },
+      {
+        "fqcn": "dellemc.powerflex",
+        "version": "1.5.0"
+      },
+      {
+        "fqcn": "dellemc.os9",
+        "version": "1.0.4"
+      },
+      {
+        "fqcn": "dellemc.openmanage",
+        "version": "6.3.0"
+      },
+      {
+        "fqcn": "community.azure",
+        "version": "2.0.0"
+      },
+      {
+        "fqcn": "community.routeros",
+        "version": "2.8.0"
+      },
+      {
+        "fqcn": "community.postgresql",
+        "version": "2.3.2"
+      },
+      {
+        "fqcn": "community.mysql",
+        "version": "3.6.0"
+      },
+      {
+        "fqcn": "community.rabbitmq",
+        "version": "1.2.3"
+      },
+      {
+        "fqcn": "community.proxysql",
+        "version": "1.5.1"
+      },
+      {
+        "fqcn": "community.libvirt",
+        "version": "1.2.0"
+      },
+      {
+        "fqcn": "community.grafana",
+        "version": "1.5.4"
+      },
+      {
+        "fqcn": "community.okd",
+        "version": "2.3.0"
+      },
+      {
+        "fqcn": "community.mongodb",
+        "version": "1.5.1"
+      },
+      {
+        "fqcn": "community.digitalocean",
+        "version": "1.23.0"
+      },
+      {
+        "fqcn": "community.general",
+        "version": "6.5.0"
+      },
+      {
+        "fqcn": "community.network",
+        "version": "5.0.0"
+      },
+      {
+        "fqcn": "community.dns",
+        "version": "2.5.2"
+      },
+      {
+        "fqcn": "community.google",
+        "version": "1.0.0"
+      },
+      {
+        "fqcn": "community.hrobot",
+        "version": "1.8.0"
+      },
+      {
+        "fqcn": "community.sap_libs",
+        "version": "1.4.1"
+      },
+      {
+        "fqcn": "community.vmware",
+        "version": "3.5.0"
+      },
+      {
+        "fqcn": "community.aws",
+        "version": "5.4.0"
+      },
+      {
+        "fqcn": "community.windows",
+        "version": "1.12.0"
+      },
+      {
+        "fqcn": "community.ciscosmb",
+        "version": "1.0.5"
+      },
+      {
+        "fqcn": "community.sops",
+        "version": "1.6.1"
+      },
+      {
+        "fqcn": "community.zabbix",
+        "version": "1.9.2"
+      },
+      {
+        "fqcn": "community.sap",
+        "version": "1.0.0"
+      },
+      {
+        "fqcn": "community.crypto",
+        "version": "2.11.1"
+      },
+      {
+        "fqcn": "community.hashi_vault",
+        "version": "4.2.0"
+      },
+      {
+        "fqcn": "community.docker",
+        "version": "3.4.3"
+      },
+      {
+        "fqcn": "community.fortios",
+        "version": "1.0.0"
+      },
+      {
+        "fqcn": "community.skydive",
+        "version": "1.0.0"
+      },
+      {
+        "fqcn": "lowlydba.sqlserver",
+        "version": "1.3.1"
+      },
+      {
+        "fqcn": "ovirt.ovirt",
+        "version": "2.4.1"
+      },
+      {
+        "fqcn": "cloudscale_ch.cloud",
+        "version": "2.2.4"
+      },
+      {
+        "fqcn": "netapp_eseries.santricity",
+        "version": "1.4.0"
+      },
+      {
+        "fqcn": "splunk.es",
+        "version": "2.1.0"
+      },
+      {
+        "fqcn": "gluster.gluster",
+        "version": "1.0.2"
+      },
+      {
+        "fqcn": "netapp.azure",
+        "version": "21.10.0"
+      },
+      {
+        "fqcn": "netapp.ontap",
+        "version": "22.4.1"
+      },
+      {
+        "fqcn": "netapp.elementsw",
+        "version": "21.7.0"
+      },
+      {
+        "fqcn": "netapp.storagegrid",
+        "version": "21.11.1"
+      },
+      {
+        "fqcn": "netapp.cloudmanager",
+        "version": "21.22.0"
+      },
+      {
+        "fqcn": "netapp.aws",
+        "version": "21.7.0"
+      },
+      {
+        "fqcn": "netapp.um_info",
+        "version": "21.8.0"
       },
       {
         "fqcn": "inspur.ispim",
@@ -320,128 +408,64 @@
         "version": "2.3.0"
       },
       {
-        "fqcn": "junipernetworks.junos",
-        "version": "5.1.0"
+        "fqcn": "cyberark.pas",
+        "version": "1.0.17"
       },
       {
-        "fqcn": "kubernetes.core",
-        "version": "2.4.0"
+        "fqcn": "cyberark.conjur",
+        "version": "1.2.0"
       },
       {
-        "fqcn": "lowlydba.sqlserver",
-        "version": "2.0.0"
-      },
-      {
-        "fqcn": "microsoft.ad",
-        "version": "1.1.0"
-      },
-      {
-        "fqcn": "netapp.aws",
-        "version": "21.7.0"
-      },
-      {
-        "fqcn": "netapp.azure",
-        "version": "21.10.0"
-      },
-      {
-        "fqcn": "netapp.cloudmanager",
-        "version": "21.22.0"
-      },
-      {
-        "fqcn": "netapp.elementsw",
-        "version": "21.7.0"
-      },
-      {
-        "fqcn": "netapp.ontap",
-        "version": "22.6.0"
-      },
-      {
-        "fqcn": "netapp.storagegrid",
-        "version": "21.11.1"
-      },
-      {
-        "fqcn": "netapp.um_info",
-        "version": "21.8.0"
-      },
-      {
-        "fqcn": "netapp_eseries.santricity",
-        "version": "1.4.0"
-      },
-      {
-        "fqcn": "netbox.netbox",
-        "version": "3.13.0"
-      },
-      {
-        "fqcn": "ngine_io.cloudstack",
-        "version": "2.3.0"
-      },
-      {
-        "fqcn": "ngine_io.exoscale",
-        "version": "1.0.0"
-      },
-      {
-        "fqcn": "ngine_io.vultr",
-        "version": "1.1.3"
-      },
-      {
-        "fqcn": "openstack.cloud",
-        "version": "2.1.0"
-      },
-      {
-        "fqcn": "openvswitch.openvswitch",
-        "version": "2.1.1"
-      },
-      {
-        "fqcn": "ovirt.ovirt",
-        "version": "3.1.2"
-      },
-      {
-        "fqcn": "purestorage.flasharray",
-        "version": "1.18.0"
-      },
-      {
-        "fqcn": "purestorage.flashblade",
-        "version": "1.11.0"
-      },
-      {
-        "fqcn": "purestorage.fusion",
-        "version": "1.4.2"
+        "fqcn": "amazon.aws",
+        "version": "5.4.0"
       },
       {
         "fqcn": "sensu.sensu_go",
         "version": "1.13.2"
       },
       {
-        "fqcn": "servicenow.servicenow",
-        "version": "1.0.6"
+        "fqcn": "ansible.netcommon",
+        "version": "4.1.0"
       },
       {
-        "fqcn": "splunk.es",
-        "version": "2.1.0"
+        "fqcn": "ansible.utils",
+        "version": "2.9.0"
       },
       {
-        "fqcn": "t_systems_mms.icinga_director",
-        "version": "1.32.2"
+        "fqcn": "ansible.posix",
+        "version": "1.5.1"
       },
       {
-        "fqcn": "theforeman.foreman",
-        "version": "3.10.0"
+        "fqcn": "ansible.windows",
+        "version": "1.13.0"
       },
       {
-        "fqcn": "vmware.vmware_rest",
-        "version": "2.3.1"
+        "fqcn": "azure.azcollection",
+        "version": "1.13.0"
       },
       {
-        "fqcn": "vultr.cloud",
-        "version": "1.7.1"
+        "fqcn": "openstack.cloud",
+        "version": "1.8.0"
       },
       {
-        "fqcn": "vyos.vyos",
-        "version": "4.0.2"
+        "fqcn": "community.general",
+        "version": "5.1.0"
       },
       {
-        "fqcn": "wti.remote",
-        "version": "1.0.4"
+        "fqcn": "community.crypto",
+        "version": "2.7.0"
+      },
+      {
+        "fqcn": "ansible.netcommon",
+        "version": "4.1.0"
+      },
+      {
+        "fqcn": "ansible.utils",
+        "version": "2.8.0"
+      },
+      {
+        "fqcn": "ansible.posix",
+        "version": "1.4.0"
       }
     ],
     "ansible_config": {
@@ -453,23 +477,11 @@
       "collections": [
         {
           "name": "amazon.aws",
-          "version": "6.0.0"
+          "version": "5.2.0"
         },
         {
-          "name": "steampunk.aws",
-          "version": "0.9.0"
-        },
-        {
-          "name": "community.postgresql",
-          "version": "2.4.1"
-        },
-        {
-          "name": "cisco.ios",
-          "version": "4.5.0"
-        },
-        {
-          "name": "ansible.windows",
-          "version": "1.14.0"
+          "name": "community.aws",
+          "version": "5.2.0"
         }
       ]
     },
@@ -479,152 +491,65 @@
       "include_metadata": false,
       "rewrite": false,
       "display_level": "hint",
-      "profile": "default",
-      "skip_checks": []
+      "profile": "default"
     }
   },
   "tasks": [
     {
-      "task_id": "7910b594-01b5-466a-8736-358a308dbf8f",
+      "task_id": "341dfca5-1d4e-4ad7-8a2f-29a4ddbfba36",
       "task_args": {
-        "name": "Create security group.",
-        "amazon.aws.ec2_security_group": {
-          "name": "web-app-sec",
-          "description": "Sec group for app web-app",
-          "region": "us-west-1",
-          "access_key": "{{ ec2_access_key }}",
+        "name": "Create a security group",
+        "amazon.aws.ec2_group": {
+          "name": "ansible",
+          "description": "Ansible Security Group",
+          "region": "{{aws_region}}",
+          "vpc_id": "{{vpc_id}}",
+          "aws_access_key": "{{aws_access_key}}",
+          "aws_secret_key": "{{aws_secret_key}}",
           "rules": [
             {
-              "proto": "tcp",
-              "from_port": 22,
-              "to_port": 22,
-              "cidr_ip": "0.0.0.0/0"
+              "proto": "all",
+              "cidr_ip": "{{cidr_ip}}"
             },
             {
-              "proto": "tcp",
-              "to_port": 80,
+              "proto": "all",
+              "group_name": "ansible"
+            }
+          ],
+          "rules_egress": [
+            {
+              "proto": "all",
               "cidr_ip": "0.0.0.0/0"
             }
           ]
         },
-        "register": "result_sec_group"
+        "register": "firewall"
       }
     },
     {
-      "task_id": "daf13d68-adec-4549-bfa6-fc2d73917c0c",
+      "task_id": "309c8984-1fc9-42cb-9440-5e286b375319",
       "task_args": {
-        "name": "EC2 instance create.",
-        "amazon.aws.ec2_instance": {
-          "name": "VM_for_demo",
-          "vpc_subnet_id": "subnet-5ca1ab1e",
-          "instance_type": "t2.micro",
-          "key_name": "prod-ssh-key",
-          "security_group": "default",
-          "volumes": [
-            {
-              "device_name": "/dev/sda1",
-              "ebs": {
-                "volume_size": 254,
-                "delete_on_termination": true
-              }
-            }
-          ],
-          "image_id": "ami-08c947c038321a605",
-          "network": {
-            "assign_public_ip": true
-          },
-          "tags": {
-            "demo": "VM"
-          }
-        }
-      }
-    },
-    {
-      "task_id": "9b580dc3-1a17-4729-995f-98128b3555ff",
-      "task_args": {
-        "name": "VPC info.",
+        "name": "VPC info",
         "steampunk.aws.ec2_vpc_info": {
           "auth": {
-            "access_key": "asdasr32rfsg35etgg35et",
-            "secret_key": "{{ my_secret_key }}",
-            "region": "{{ my_region }}"
+            "aws_access_key": "{{ my_access_key }}",
+            "aws_secret_key": "{{ my_secret_key }}",
+            "aws_ec2_region": "{{ my_region }}"
           }
         },
         "register": "vpcs"
-      }
-    },
-    {
-      "task_id": "bb620eef-eab3-42ab-bc71-d61fc722fbd5",
-      "task_args": {
-        "name": "Create a new database with name \"acme\"",
-        "community.postgresql.postgresql_db": {
-          "db": "acme"
-        }
-      }
-    },
-    {
-      "task_id": "ca7a00d9-3209-435f-aa7c-10cff940e481",
-      "task_args": {
-        "name": "Insert data to the column of array type using positional_args. Note that we use quotes here, the same as for passing JSON, etc.\n",
-        "community.postgresql.postgresql_query": {
-          "query": "INSERT INTO test_table (array_column) VALUES (%s)",
-          "positional_args": [
-            "{1,2,3}"
-          ]
-        }
-      }
-    },
-    {
-      "task_id": "faa074b8-29a9-4d73-9946-a7182923d5cf",
-      "task_args": {
-        "name": "Change Password for User netop",
-        "cisco.ios.ios_user": {
-          "name": "netop",
-          "configured_password": "{{ new_password }}",
-          "update_password": null,
-          "state": "present"
-        }
-      }
-    },
-    {
-      "task_id": "fac516a2-6a21-42f4-8d10-de907afc9cfc",
-      "task_args": {
-        "name": "ensure that the desired snmp strings are present",
-        "cisco.ios.ios_config": {
-          "lines": [
-            "snmp-server community ansible-public RO",
-            "reboot"
-          ]
-        }
-      }
-    },
-    {
-      "task_id": "fa9b2326-f080-4933-9c4e-0feefbbad637",
-      "task_args": {
-        "name": "Ensure user bob is present",
-        "ansible.windows.win_user": {
-          "name": "MSbob",
-          "fullname": "Bob Something",
-          "password": "{{ bob_password }}",
-          "password_expired": false,
-          "password_never_expires": true,
-          "state": "present",
-          "groups": [
-            "Users"
-          ]
-        },
-        "no_log": false
       }
     }
   ],
   "playbooks": [
     {
-      "playbook_id": "8b72d149-0d9c-4e75-9614-9c48009be7f1",
+      "playbook_id": "ca4428b2-0429-49cf-8761-76197843ab4f",
       "plays": [
         {
-          "play_id": "a4b349c1-b138-4cb2-93c3-651e62faf444",
+          "play_id": "48342d76-77ea-400c-a288-cbe5cb70494d",
           "play_args": {
-            "hosts": "all",
+            "name": "Create AWS resources",
+            "hosts": "localhost",
             "connection": "local",
             "gather_facts": false
           }

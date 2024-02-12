@@ -1,0 +1,21 @@
+{
+  "skip_checks": [
+    {
+      "event": "H2200"
+    },
+    {
+      "event": "E005",
+      "fqcn": "sensu.sensu_go.user"
+    },
+    {
+      "event": "E2300",
+      "subevent_code": "EndWithDot"
+    }
+  ],
+  "enforce_checks": [
+    {
+      "event": "E903"
+    }
+  ]
+}
+

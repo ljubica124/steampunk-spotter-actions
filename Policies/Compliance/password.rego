@@ -1,4 +1,4 @@
-package Play
+package Spotter
 
 SpotterPolicy[result] {
 	task := input.tasks[i]
@@ -16,6 +16,7 @@ SpotterPolicy[result] {
 	result := {
 		"correlation_id": task.task_id,
 		"check_type": "TASK",
+		"subcode": "NoLogFullName",
 		"message": "When using a parameter fullname, ensure that the Ansible task is run with parameter no-log.",
 		"abc": no_log,
 		"asc": x,

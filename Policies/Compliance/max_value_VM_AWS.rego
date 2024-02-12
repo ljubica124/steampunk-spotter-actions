@@ -8,6 +8,7 @@ SpotterPolicy[result] {
 	result := {
 		"correlation_id": task.task_id,
 		"check_type": "TASK",
+		"subcode": "AWS_VMSize",
 		"message": "Volume size should be set to less then 128GB.",
 	}
 }
