@@ -7,7 +7,7 @@
         password: "{{ lookup('env', 'SENSU_USER_PASSWORD') }}"
       when: true
 
-    - name: Get the payload from the API # noqa: W003, E903, W1800
+    - name: Get the payload from the API
       uri:
         url: "/some-url"
         method: GET
