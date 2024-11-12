@@ -8,7 +8,7 @@ jobs:
         uses: actions/checkout@master
 
       - name: Scan Ansible content
-        uses: xlab-steampunk/spotter-action@4.4.0
+        uses: xlab-steampunk/spotter-action@4.4.1
         with:
           sarif_file: example.sarif
         continue-on-error: true
