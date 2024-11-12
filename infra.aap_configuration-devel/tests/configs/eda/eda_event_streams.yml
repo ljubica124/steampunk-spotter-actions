@@ -1,6 +1,0 @@
----
-eda_event_streams:
-  - name: Example Event Stream
-    credential_name: basic_stream_cred
-    organization: Default
-...

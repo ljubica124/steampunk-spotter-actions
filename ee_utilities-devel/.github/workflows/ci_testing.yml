@@ -1,0 +1,36 @@
+---
+name: Run Test of EE utilities
+on: [push]
+
+jobs:
+  Integration-test:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Install podman
+        run: sudo apt -y install podman
+
+      - name: Install Ansible and Ansible Builder
+        run: pip install --upgrade setuptools ansible-core ansible-builder
+
+      - name: Move ansible.cfg to root
+        run: mv .github/files/ansible.cfg .
+
+      - name: Install Dependencies
+        run: ansible-galaxy collection install containers.podman -f
+
+      - name: podman login
+        run: podman login quay.io --username redhat_cop+github_action --password ${{ secrets.quay_token }}
+
+      - name: Build EE
+        run: ansible-playbook .github/tests/build_ee.yml -e "ee_registry_username=redhat_cop+github_action" -e "ee_registry_password=${{ secrets.quay_token }}" --connection=local -e "ee_registry_dest=quay.io/redhat_cop/config_as_code_ee" -vvv
+        env:
+          ANSIBLE_HOST_KEY_CHECKING: False
+...
