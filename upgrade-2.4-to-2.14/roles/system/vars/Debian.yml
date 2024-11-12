@@ -1,7 +1,0 @@
----
-packages:
-  - vim
-  - curl
-  - wget
-  - htop
-  - ufw
