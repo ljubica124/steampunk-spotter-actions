@@ -12,6 +12,7 @@ jobs:
         with:
           sarif_file: example.sarif
         continue-on-error: true
+        project_id: XIUWiKRaRP6MF5zohfvrwQ
         env:
           SPOTTER_API_TOKEN: ${{ secrets.SPOTTER_TOKEN }}
 
