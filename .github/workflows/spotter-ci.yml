@@ -11,7 +11,6 @@ jobs:
         uses: xlab-steampunk/spotter-action@3.3.0
         with:
           sarif_file: example.sarif
-          project_id: XIUWiKRaRP6MF5zohfvrwQ
         continue-on-error: true
         env:
           SPOTTER_API_TOKEN: ${{ secrets.SPOTTER_TOKEN }}
