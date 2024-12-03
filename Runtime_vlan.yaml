@@ -1,0 +1,39 @@
+---
+- name: Configure new IOS switch
+  hosts: all
+  connection: ansible.netcommon.network_cli
+  gather_facts: false
+  tasks:
+    - name: Set VLAN facts.
+      ansible.builtin.set_fact:
+        u_password: "{{ password }}"
+        u: "{{ user }}"
+        VlanID: "{{ vlan_id }}"
+        VlanName: "{{ vlan_name }}"
+        interfaces: "{{ interface_range }}"
+
+    - name: Change Password for User netop
+      cisco.ios.ios_user:
+        name: "{{ u }}"
+        configured_password: "{{ u_password }}"
+        update_password: always
+        state: present
+
+    - name: Configure Vlan.
+      cisco.ios.ios_vlans:
+        config:
+          - name:  "{{ VlanName }}"
+            vlan_id: "{{ VlanID }}"
+            state: active
+            shutdown: disabled
+      become: yes
+      become_method: enable
+
+    - name: Add VLANs to ports.
+      cisco.ios.ios_config:
+        lines:
+          - interface range "{{ interfaces }}"
+          - switchport mode access
+          - switchport access vlan "{{ VlanID }}"
+      become: yes
+      become_method: enable
