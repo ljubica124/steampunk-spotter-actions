@@ -38,34 +38,16 @@
         tags:
           demo: VM
 
-    - name: Create a cloudformation stack
-      amazon.aws.cloudformation:
-        stack_name: "ansible-cloudformation"
-        state: "present"
-        region: "us-east-1"
-        disable_rollback: true
-        template: "files/cloudformation-example.json"
-        template_parameters:
-          KeyName: "jmartin"
-          DiskType: "ephemeral"
-          InstanceType: "m1.small"
-          ClusterSize: 3
-        tags:
-          Stack: "ansible-cloudformation"
-
     - name: Open ports using UFW
       community.general.ufw:
         rule: allow
-        port: "{{ item }}"
+        port: "{{ port }}"
         from_ip: any
         proto: tcp
-      loop: 
-        - 144
-        - 59
-        - 22
 
-- name: run multiple commands on remote nodes
-  cisco.iosxr.iosxr_command:
-    commands:
-      - show version
-      - reboot
+    - name: run multiple commands on remote nodes
+      cisco.ios.ios_config:
+        commands:
+          - show version
+          - reboot
+
